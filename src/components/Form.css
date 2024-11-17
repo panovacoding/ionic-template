@@ -1,0 +1,46 @@
+ion-input.custom {
+  --highlight-color-focused: rgb(0, 0, 0);
+  min-height: 40px !important;
+}
+
+ion-title.title-lage {
+  font-size: 56px;
+}
+
+ion-item.custom {
+  --padding-start: 0;
+}
+
+#container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.form {
+  width: 600px;
+  max-width: 90%;
+  margin: 1rem auto;
+
+  border: 1px solid gray;
+  border-radius: 16px;
+  padding: 1.5rem;
+}
