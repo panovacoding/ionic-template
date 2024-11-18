@@ -1,6 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../../components/ExploreContainer';
-import Form from '../components/Form'
+import ExploreContainer from '../../components/Form';
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -19,7 +18,6 @@ const Home: React.FC = () => {
         </IonHeader>
 
         <ExploreContainer />
-        {/* <Form></Form> */}
 
       </IonContent>
     </IonPage>
