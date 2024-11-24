@@ -10,7 +10,7 @@ import {
   useIonRouter,
 } from '@ionic/react';
 
-import { validateEmail, validatePassword } from './../utils/validation';
+import { validateEmail, validatePassword } from '../../utils/validation';
 import './Form.css';
 
 interface ContainerProps {}
