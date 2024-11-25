@@ -11,26 +11,17 @@ import {
   IonCardContent,
   IonCardTitle,
   IonCardSubtitle,
+  IonSpinner,
 } from '@ionic/react';
 import Header from '../../components/Header/Header';
 import { fetchData } from './../../utils/data';
 import { NewsItem } from '../../utils/types';
+import { useNews } from '../../config/NewsContext';
+import { convertDate } from '../../utils/convertDate';
 import './News.css';
 
-
 const News: React.FC = () => {
-
-const [news, setNews] = useState<NewsItem[]>([]);
-
-  useEffect(() => {
-    const fetchAndSetNews = async () => {
-      const articles = await fetchData(); // Получаем массив новостей
-      const filteresArticles = articles.filter((el) => el.content !== null)
-      setNews(filteresArticles); // Сохраняем в состояние
-    };
-
-    fetchAndSetNews();
-  }, []);
+  const { news, isLoading } = useNews();
 
   return (
     <IonPage>
@@ -40,32 +31,39 @@ const [news, setNews] = useState<NewsItem[]>([]);
           <IonText>
             <h1>Новости</h1>
           </IonText>
-          <IonGrid className="grid-news">
-            <IonRow>
-              {news.map(
-                ({ title, publishedAt, content, urlToImage }: NewsItem) => (
+          {isLoading ? (
+            <IonSpinner />
+          ) : (
+            <IonGrid className="grid-news">
+              <IonRow>
+                {news?.map((article: NewsItem) => (
                   <IonCol size="12" sizeSm="6" sizeMd="4" className="flex">
-                    <IonCard routerLink="/news-detail">
+                    <IonCard
+                      routerLink={`/news-detail/${article.title}`}
+                      routerDirection="forward"
+                    >
                       <img
-                        alt={title || ''}
+                        alt={article.title || ''}
                         src={
-                          urlToImage ||
+                          article.urlToImage ||
                           'https://ionicframework.com/docs/img/demos/card-media.png'
                         }
                         className="ion-card-image"
                       />
                       <IonCardHeader>
-                        <IonCardTitle>{title}</IonCardTitle>
-                        <IonCardSubtitle>{publishedAt}</IonCardSubtitle>
+                        <IonCardTitle>{article.title}</IonCardTitle>
+                        <IonCardSubtitle>
+                          {convertDate(article.publishedAt)}
+                        </IonCardSubtitle>
                       </IonCardHeader>
 
-                      <IonCardContent>{content}</IonCardContent>
+                      <IonCardContent>{article.content}</IonCardContent>
                     </IonCard>
                   </IonCol>
-                )
-              )}
-            </IonRow>
-          </IonGrid>
+                ))}
+              </IonRow>
+            </IonGrid>
+          )}
         </div>
       </IonContent>
     </IonPage>

@@ -1,6 +1,8 @@
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
+import { NewsContext } from './config/NewsContext';
+import { NewsProvider } from './config/NewsContext';
 import Home from './pages/Home/Home';
 import RegisterSuccess from './pages/RegisterSuccess/RegisterSuccess'
 import News from './pages/News/News'
@@ -34,26 +36,32 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import NewsDetail from './pages/NewsDetail/NewsDetail';
 
 setupIonicReact();
 
 const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Redirect exact from="/" to="/home" />
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/success">
-          <RegisterSuccess />
-        </Route>
-        <Route exact path="/news">
-          <News />
-        </Route>
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
+  <NewsProvider>
+    <IonApp>
+      <IonReactRouter>
+        <IonRouterOutlet>
+          <Redirect exact from="/" to="/home" />
+          <Route exact path="/home">
+            <Home />
+          </Route>
+          <Route exact path="/success">
+            <RegisterSuccess />
+          </Route>
+          <Route exact path="/news">
+            <News />
+          </Route>
+          <Route exact path="/news-detail/:title">
+            <NewsDetail />
+          </Route>
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </IonApp>
+  </NewsProvider>
 );
 
 export default App;

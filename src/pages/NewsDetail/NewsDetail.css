@@ -1,0 +1,41 @@
+.article-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px clamp(40px, 5.56vw, 80px);
+    width: 100%;
+    max-width: 1440px;
+}
+
+@media (max-width: 768px) {
+    .article-container {
+        padding:  16px;
+        flex-direction: column;
+    }
+}
+
+.article {
+    max-width: 900px;
+}
+
+
+h1.article__title {
+    font-size: clamp(28px, 2.50vw, 36px) !important;
+    font-weight: 600 !important;
+    margin-bottom: 16px !important;
+}
+
+.article__image {
+    border-radius: 16px;
+    overflow: hidden;
+    max-height: 400px;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 16px;
+}
+
+.article__content {
+    font-size: clamp(16px, 1.25vw, 18px);
+    line-height: 140%;
+}
