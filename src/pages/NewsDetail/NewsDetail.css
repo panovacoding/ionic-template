@@ -6,6 +6,7 @@
     padding: 20px clamp(40px, 5.56vw, 80px);
     width: 100%;
     max-width: 1440px;
+    margin: 0 auto;
 }
 
 @media (max-width: 768px) {
