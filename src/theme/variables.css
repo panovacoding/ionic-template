@@ -1,2 +1,9 @@
 /* For information on how to create your own theme, please see:
 http://ionicframework.com/docs/theming/ */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color: #FFFFFF !important;
+    --ion-color-primary-contrast: #FFFFFF !important;
+  }
+}
