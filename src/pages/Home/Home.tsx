@@ -6,9 +6,13 @@ import Header from '../../components/Header/Header';
 const Home: React.FC = () => {
   return (
     <IonPage>
-      <Header title='Главная'/>
+      <Header title="Главная" />
       <IonContent fullscreen>
-        <Form />
+        <div className="container">
+          <div className="form-container">
+            <Form />
+          </div>
+        </div>
       </IonContent>
     </IonPage>
   );
