@@ -2,6 +2,10 @@ import {
   IonPage,
   IonContent,
   IonSpinner,
+  IonHeader,
+  IonToolbar, 
+  IonButtons,
+  IonBackButton
 } from '@ionic/react';
 
 import Header from '../../components/Header/Header';
@@ -26,15 +30,21 @@ const NewsDetail : React.FC = () => {
 
     return (
       <IonPage>
-        <Header title='Новости'/>
+        <IonHeader>
+          <IonToolbar color="primary">
+            <IonButtons slot="start">
+              <IonBackButton text={'Назад'}></IonBackButton>
+            </IonButtons>
+          </IonToolbar>
+        </IonHeader>
         <IonContent>
-            <div className="article-container">
-                {isLoading ? (
-                    <IonSpinner />
-                ) : (
-                  <Article article={article} onIonButtonClick={handleBack} />
-                )}
-            </div>
+          <div className="article-container">
+            {isLoading ? (
+              <IonSpinner />
+            ) : (
+              <Article article={article} onIonButtonClick={handleBack} />
+            )}
+          </div>
         </IonContent>
       </IonPage>
     );
