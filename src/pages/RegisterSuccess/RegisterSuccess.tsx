@@ -14,7 +14,7 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        <IonToolbar color="primary">
           <IonButtons slot="start">
             <IonBackButton></IonBackButton>
           </IonButtons>
@@ -22,16 +22,9 @@ const Home: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-
         <div className="success-container">
           <h1>Регистрация прошла успешно</h1>
         </div>
-
       </IonContent>
     </IonPage>
   );
