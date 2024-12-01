@@ -1,0 +1,23 @@
+ion-card.custom {
+    box-shadow: none !important;
+    border-radius: 8px;
+    border: 1px solid lightgray;
+    padding: 16px;
+}
+
+ion-card.custom ion-card-header {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+ion-card.custom ion-card-content {
+    padding: 0;
+}
+
+.ion-card-image {
+    height: 232px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    overflow: hidden;
+}

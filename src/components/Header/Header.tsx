@@ -1,12 +1,12 @@
-import {IonHeader, IonToolbar, IonButtons, IonButton} from '@ionic/react'
-const Header: React.FC = () => {
+import {IonHeader, IonToolbar, IonTitle, IonButtons, IonButton} from '@ionic/react'
+interface HeaderProps {
+  title: string
+}
+const Header: React.FC<HeaderProps> = ({title}) => {
     return (
       <IonHeader>
         <IonToolbar color="primary">
-          <IonButtons>
-            <IonButton routerLink="/home">Главная</IonButton>
-            <IonButton routerLink="/news">Новости</IonButton>
-          </IonButtons>
+          <IonTitle>{title}</IonTitle>
         </IonToolbar>
       </IonHeader>
     );

@@ -14,12 +14,12 @@ const News: React.FC = () => {
 
   return (
     <IonPage>
-      <Header />
+      <Header title='Новости' />
       <IonContent>
         <div className="container">
-          <IonText>
+          {/* <IonText>
             <h1>Новости</h1>
-          </IonText>
+          </IonText> */}
           {isLoading ? (
             <IonSpinner />
           ) : (

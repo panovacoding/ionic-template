@@ -1,5 +1,15 @@
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+import {
+  IonApp,
+  IonRouterOutlet,
+  setupIonicReact,
+  IonTabs,
+  IonTabBar,
+  IonTabButton,
+  IonIcon,
+  IonLabel
+} from '@ionic/react';
+import { homeOutline, newspaperOutline } from 'ionicons/icons';
 import { IonReactRouter } from '@ionic/react-router';
 import { NewsContext } from './config/NewsContext';
 import { NewsProvider } from './config/NewsContext';
@@ -44,21 +54,34 @@ const App: React.FC = () => (
   <NewsProvider>
     <IonApp>
       <IonReactRouter>
-        <IonRouterOutlet>
-          <Redirect exact from="/" to="/home" />
-          <Route exact path="/home">
-            <Home />
-          </Route>
-          <Route exact path="/success">
-            <RegisterSuccess />
-          </Route>
-          <Route exact path="/news">
-            <News />
-          </Route>
-          <Route exact path="/news-detail/:title">
-            <NewsDetail />
-          </Route>
-        </IonRouterOutlet>
+        <IonTabs>
+          <IonRouterOutlet>
+            <Redirect exact from="/" to="/home" />
+            <Route exact path="/home">
+              <Home />
+            </Route>
+            <Route exact path="/success">
+              <RegisterSuccess />
+            </Route>
+            <Route exact path="/news">
+              <News />
+            </Route>
+            <Route exact path="/news-detail/:title">
+              <NewsDetail />
+            </Route>
+          </IonRouterOutlet>
+          <IonTabBar slot="bottom">
+            <IonTabButton tab="home" href="/home">
+              <IonIcon icon={homeOutline} />
+              <IonLabel>Главная</IonLabel>
+            </IonTabButton>
+
+            <IonTabButton tab="search" href="/news">
+              <IonIcon icon={newspaperOutline} />
+              <IonLabel>Новости</IonLabel>
+            </IonTabButton>
+          </IonTabBar>
+        </IonTabs>
       </IonReactRouter>
     </IonApp>
   </NewsProvider>

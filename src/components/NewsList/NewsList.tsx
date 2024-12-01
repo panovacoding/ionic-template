@@ -10,6 +10,7 @@ import {
 } from '@ionic/react'
 import { NewsItem } from '../../utils/types';
 import { convertDate } from '../../utils/convertDate';
+import './NewsList.css'
 
 interface NewsListProps {
   news: NewsItem[] | null; // Ожидаемый массив новостей
@@ -19,11 +20,12 @@ const NewsList: React.FC<NewsListProps> = ({news}) => {
     return (
         <IonGrid className="grid-news">
         <IonRow>
-            {news?.map((article: NewsItem) => (
-            <IonCol size="12" sizeSm="6" sizeMd="4" className="flex">
+            {news?.map((article: NewsItem, i) => (
+            <IonCol size="12" sizeSm="6" sizeMd="4" className="flex" key={i}>
                 <IonCard
-                routerLink={`/news-detail/${article.title}`}
-                routerDirection="forward"
+                    className="custom"
+                    routerLink={`/news-detail/${article.title}`}
+                    routerDirection="forward"
                 >
                 <img
                     alt={article.title || ''}
