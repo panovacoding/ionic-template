@@ -2,6 +2,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { NewsItem } from './../utils/types';
 import { fetchData } from './../utils/data'; // Импорт вашей функции для получения данных
+import { dataStatic } from '../utils/dataStatic';
 
 // Создаем контекст
 export const NewsContext = createContext<{
@@ -31,9 +32,10 @@ export const NewsProvider: React.FC<{ children: React.ReactNode }> = ({
   useEffect(() => {
     const fetchAndSetNews = async () => {
       try {
-        const articles = await fetchData();
-        const filteredArticles = articles.filter((el) => el.content !== null);
-        setNews(filteredArticles);
+        // const articles = await fetchData();
+        // const filteredArticles = articles.filter((el) => el.content !== null);
+        // setNews(filteredArticles);
+        setNews(dataStatic)
       } catch (error) {
         console.error('Error fetching news:', error);
       } finally {
