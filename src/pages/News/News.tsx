@@ -14,7 +14,7 @@ const News: React.FC = () => {
 
   return (
     <IonPage>
-      {/* <Header title='Новости' /> */}
+      <Header title='Новости' />
       <IonContent>
         <div className="container">
           {/* <IonText>

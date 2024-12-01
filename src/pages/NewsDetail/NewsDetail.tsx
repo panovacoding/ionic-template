@@ -26,7 +26,7 @@ const NewsDetail : React.FC = () => {
 
     return (
       <IonPage>
-        {/* <Header title='Новости'/> */}
+        <Header title='Новости'/>
         <IonContent>
             <div className="article-container">
                 {isLoading ? (
