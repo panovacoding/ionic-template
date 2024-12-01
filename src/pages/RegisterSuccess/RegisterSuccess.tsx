@@ -16,9 +16,8 @@ const Home: React.FC = () => {
       <IonHeader>
         <IonToolbar color="primary">
           <IonButtons slot="start">
-            <IonBackButton></IonBackButton>
+            <IonBackButton text={'Вернуться на главную'}></IonBackButton>
           </IonButtons>
-          <IonTitle>Вернуться на главную</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
