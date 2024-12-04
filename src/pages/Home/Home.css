@@ -65,3 +65,17 @@ h1 {
         margin: 10px auto 0;
     }
 }
+
+@media screen and (min-width: 768px) and (min-height: 600px) {
+    ion-modal.custom-modal {
+        --border-radius: 8px;   
+    }
+}
+
+ion-header.no-shadow {
+    box-shadow: none;
+}
+
+ion-header.border-bottom {
+    border-bottom: 1px solid lightgray;
+}

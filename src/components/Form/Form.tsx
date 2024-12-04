@@ -231,8 +231,13 @@ const Form: React.FC<ContainerProps> = () => {
           <IonCol className="small">
             <IonLabel>
               Отправляя форму, вы принимаете{' '}
-              <a>«Соглашение об обработке персональных данных»</a> и{' '}
-              <a>«Условия сервиса»</a>
+              <a id="open-agree-modal" style={{ cursor: 'pointer' }}>
+                «Пользовательское соглашение»
+              </a>{' '}
+              и{' '}
+              <a id="open-service-modal" style={{ cursor: 'pointer' }}>
+                «Условия сервиса»
+              </a>
             </IonLabel>
           </IonCol>
         </IonRow>

@@ -12,6 +12,10 @@ ion-title.title-lage {
   font-size: 56px;
 }
 
+ion-title.black {
+  color: black;
+}
+
 ion-item.custom {
   --padding-start: 0;
 }
