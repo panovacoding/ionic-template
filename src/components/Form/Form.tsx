@@ -13,7 +13,10 @@ import {
 import { validateEmail, validatePassword } from '../../utils/validation';
 import './Form.css';
 
-interface ContainerProps {}
+interface FormProps {
+  onAgreeButtonClick: () => void;
+  onTermsButtonClick: () => void;
+}
 
 type Validity = {
   [key: string]: boolean | null; // индексная сигнатура
@@ -23,7 +26,7 @@ type ErrorMessage = {
   [key: string]: string;
 };
 
-const Form: React.FC<ContainerProps> = () => {
+const Form: React.FC<FormProps> = ({ onAgreeButtonClick, onTermsButtonClick }) => {
   const router = useIonRouter();
   const [validity, setValidity] = useState<Validity>({
     name: null,
@@ -231,11 +234,19 @@ const Form: React.FC<ContainerProps> = () => {
           <IonCol className="small">
             <IonLabel>
               Отправляя форму, вы принимаете{' '}
-              <a id="open-agree-modal" style={{ cursor: 'pointer' }}>
+              <a
+                id="open-agree-modal"
+                style={{ cursor: 'pointer' }}
+                onClick={onAgreeButtonClick}
+              >
                 «Пользовательское соглашение»
               </a>{' '}
               и{' '}
-              <a id="open-service-modal" style={{ cursor: 'pointer' }}>
+              <a 
+                id="open-service-modal" 
+                style={{ cursor: 'pointer' }}
+                onClick={onTermsButtonClick}
+              >
                 «Условия сервиса»
               </a>
             </IonLabel>

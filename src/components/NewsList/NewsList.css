@@ -3,6 +3,7 @@ ion-card.custom {
     border-radius: 8px;
     border: 1px solid lightgray;
     padding: 16px;
+    display: flex;
 }
 
 ion-card.custom ion-card-header {
@@ -20,4 +21,17 @@ ion-card.custom ion-card-content {
     object-fit: cover;
     border-radius: 4px;
     overflow: hidden;
+}
+
+.ion-card-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    gap: 16px;
+}
+
+ion-buttons.ion-card-buttons {
+    margin-top: auto;
+    align-self: flex-end;
 }
