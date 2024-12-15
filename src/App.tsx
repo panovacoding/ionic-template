@@ -7,9 +7,10 @@ import {
   IonTabBar,
   IonTabButton,
   IonIcon,
-  IonLabel
+  IonLabel,
+  IonBadge
 } from '@ionic/react';
-import { homeOutline, newspaperOutline, informationCircleOutline } from 'ionicons/icons';
+import { homeOutline, newspaperOutline, informationCircleOutline, personCircleOutline } from 'ionicons/icons';
 import { IonReactRouter } from '@ionic/react-router';
 import { NewsContext } from './config/NewsContext';
 import { NewsProvider } from './config/NewsContext';
@@ -17,6 +18,7 @@ import Home from './pages/Home/Home';
 import RegisterSuccess from './pages/RegisterSuccess/RegisterSuccess'
 import News from './pages/News/News'
 import Help from './pages/Help/Help';
+import Profile from './pages/Profile/Profile';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -73,6 +75,9 @@ const App: React.FC = () => (
             <Route exact path="/help">
               <Help />
             </Route>
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
           </IonRouterOutlet>
           <IonTabBar slot="bottom">
             <IonTabButton tab="home" href="/home">
@@ -88,6 +93,12 @@ const App: React.FC = () => (
             <IonTabButton tab="help" href="/help">
               <IonIcon icon={informationCircleOutline} />
               <IonLabel>Помощь</IonLabel>
+            </IonTabButton>
+
+            <IonTabButton tab="profile" href="/profile">
+              <IonIcon icon={personCircleOutline} />
+              <IonLabel>Профиль</IonLabel>
+              <IonBadge color="danger">2</IonBadge>
             </IonTabButton>
           </IonTabBar>
         </IonTabs>

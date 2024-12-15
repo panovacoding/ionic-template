@@ -29,6 +29,23 @@ ion-button.ion-margin-top {
   margin-top: 28px;
 }
 
+.form-container {
+  width: 600px;
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@media (max-width: 696px), (max-height: 630px) {
+    .form-container {
+        position: static;
+        translate: 0 0;
+        margin: 10px auto 0;
+    }
+}
+
 ion-col.small {
   font-size: 12px;
   line-height: 120% !important;

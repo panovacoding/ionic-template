@@ -65,7 +65,7 @@ const Home: React.FC = () => {
           presentingElement={presentingElement}
           className="custom-modal"
         >
-          <IonHeader className="no-shadow border-bottom">
+          <IonHeader className="modal-header">
             <IonToolbar>
               <IonTitle className="black">{modalTitle}</IonTitle>
               <IonButtons slot="end">

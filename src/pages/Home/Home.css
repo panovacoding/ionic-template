@@ -49,33 +49,13 @@ h1 {
     }
 }
 
-.form-container {
-  width: 600px;
-  max-width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-}
-
-@media (max-width: 696px), (max-height: 630px) {
-    .form-container {
-        position: static;
-        translate: 0 0;
-        margin: 10px auto 0;
-    }
-}
-
 @media screen and (min-width: 768px) and (min-height: 600px) {
     ion-modal.custom-modal {
         --border-radius: 8px;   
     }
 }
 
-ion-header.no-shadow {
+ion-header.modal-header {
     box-shadow: none;
-}
-
-ion-header.border-bottom {
     border-bottom: 1px solid lightgray;
 }

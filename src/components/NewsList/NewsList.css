@@ -1,3 +1,14 @@
+.grid-news {
+    --ion-grid-column-padding: 0;
+    padding: 0;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+ion-col.flex {
+    display: flex;
+}
+
 ion-card.custom {
     box-shadow: none !important;
     border-radius: 8px;

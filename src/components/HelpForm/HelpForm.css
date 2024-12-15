@@ -1,0 +1,14 @@
+.help-form-wrap {
+    margin-top: clamp(32px, 4.17vw, 60px );
+}
+
+.help-form {
+    margin-top: 24px;
+
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid lightgray;
+    
+    width: 700px;
+    max-width: 100%;
+}
